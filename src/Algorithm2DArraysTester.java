@@ -1,23 +1,16 @@
+import java.util.ArrayList;
+
 public class Algorithm2DArraysTester {
 
     public static void main(String[] args)
     {
-        // the method will print the 2D array, and also return the 2D array
-        int[][] returnedArr = Algorithm2DArrays.printNumberGrid(5, 6);
-
-        System.out.println("-----------");
-
-        // print the returned array (number grid), just to test that the
-        // correct 2D array got returned -- this should print the same grid
-        // that is printed by the method
-        for (int[] row : returnedArr)
-        {
-            for (int val : row)
-            {
-                System.out.print(val + " ");
-            }
-            System.out.println();
-        }
+        String[][] words2 = {{"hi", "bye", "stuff", "goo"}, {"time", "up", "you", "good"}, {"map", "low", "bow", "mom"}};
+        ArrayList<String> returnedList = Algorithm2DArrays.findStringsOfLength(words2, 3);
+        System.out.println(returnedList);
+        ArrayList<String> returnedList2 = Algorithm2DArrays.findStringsOfLength(words2, 4);
+        System.out.println(returnedList2);
+        ArrayList<String> returnedList3 = Algorithm2DArrays.findStringsOfLength(words2, 6);
+        System.out.println(returnedList3);
     }
 
 

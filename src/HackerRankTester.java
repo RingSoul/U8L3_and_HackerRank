@@ -9,6 +9,18 @@ public class HackerRankTester {
                          {3, 4, 5, 6, 7, 8},
                          {0, 0, 0, 0, 0, 0},
                          {0, 0, 0, 0, 0, 0}};
+        int result = HackerRank.hourglassSumMax(case1);
+        System.out.println("Calculated max: " + result);
+        System.out.println("Expected max: 42");
+        System.out.println("Expected sum list: ");
+        System.out.println("14, 21, 28, 35,");
+        System.out.println("21, 28, 35, 42,");
+        System.out.println("13, 17, 21, 25,");
+        System.out.println("12, 15, 18, 21");
+
+        System.out.println();
+        System.out.println("------------------------------");
+        System.out.println();
 
         // test case 2 (given)
         int[][] case2 = {{-9, -9, -9, 1, 1, 1},

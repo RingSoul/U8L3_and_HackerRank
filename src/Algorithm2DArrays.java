@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Algorithm2DArrays {
     /**
      * Return true if target is found at least once in arr; false otherwise.
@@ -23,7 +25,7 @@ public class Algorithm2DArrays {
     /** Return the number of elements in arr that contain searchStr as a substring
      *
      *  @param arr  2D array of Strings
-     *  @param target  searchStr value to be searched for in each String of arr
+     *  @param searchStr  searchStr value to be searched for in each String of arr
      *  @return  the number of elements that contain searchStr as a substring
      */
     public static int countElementsWithSubstring(String[][] arr, String searchStr)
@@ -135,6 +137,69 @@ public class Algorithm2DArrays {
         }
         return returned;
     }
+
+    /** Creates and returns a square 2D array of Strings of size n x n; the
+     *  elements in the 2D array alternate between "X" and "O" (letter),
+     *  starting with "X"
+     *
+     *  For example, if n = 5, this method should return the following 2D array
+     *  (with 5 rows and 5 columns):
+     *  X O X O X
+     *  O X O X O
+     *  X O X O X
+     *  O X O X O
+     *  X O X O X
+     *
+     *  @param n  number of rows and columns (creating a square 2D array of size n x n)
+     *  @return  a 2D array of Strings that alternate between "X" and "O"
+     */
+    public static String[][] gridOfXandO(int n)
+    {
+        String[][] returned = new String[n][n];
+        boolean isX = true;
+        for (int r = 0; r < returned.length; r++)
+        {
+            for (int c = 0; c < returned[0].length; c++)
+            {
+                if (isX)
+                {
+                    returned[r][c] = "X";
+                }
+                else
+                {
+                    returned[r][c] = "O";
+                }
+                isX = !isX; // alternate
+            }
+        }
+        return returned;
+    }
+
+    /** Searches through the 2D array wordChart and finds all strings with
+     *  length len; these strings are added to an ArrayList and returned.
+     *  If no strings have that length, return an empty ArrayList
+     *
+     *  @param wordChart  2D array of Strings
+     *  @parram len  the length of strings to search for
+     *  @return  an ArrayList containing all strings in wordChart with length len
+     */
+    public static ArrayList<String> findStringsOfLength(String[][] wordChart, int len)
+    {
+        ArrayList<String> result = new ArrayList<String>();
+        for (int r = 0; r < wordChart.length; r++)
+        {
+            for (int c = 0; c < wordChart[0].length; c++)
+            {
+                String current = wordChart[r][c];
+                if (current.length() == len)
+                {
+                    result.add(current);
+                }
+            }
+        }
+        return result;
+    }
+
 
 
 
